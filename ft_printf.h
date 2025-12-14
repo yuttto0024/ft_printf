@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 17:48:21 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 10:14:25 by yuonishi         ###   ########.fr       */
+/*   Created: 2025/12/14 11:41:26 by yuonishi          #+#    #+#             */
+/*   Updated: 2025/12/14 11:48:37 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdarg.h>
-# include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void foo(char *fmt, ...)
-{
-	va_list ap;
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-	va_start(ap, fmt);
-	while (fmt != NULL)
-	{
-		printf("%s\n", fmt);
-		fmt = va_arg(ap, char*);
-	}
-	va_end(ap);
-}
+int	ft_printf(const char *, ...);
 
-int main()
-{
-	foo("aiueo", "test", "aaaaaa", NULL);
-	return 0;
-}
+#endif
