@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 11:41:26 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 20:23:44 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:33:31 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_printf_percent(va_list ap);
 int	ft_putnbr(va_list ap);
 int	ft_putnbr_unsigned(va_list ap);
 int	ft_puthex_low(va_list ap);
+int	ft_puthex_up(va_list ap);
 int	ft_putptr(va_list ap);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:48:21 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 20:22:03 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:33:50 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_convert_and_print(va_list ap, const char fmt)
 {
-	static t_fmt 	print_table[256];
-	static int		is_inittable;
+	static t_convert_formatter 	print_table[256];
+	static int					:whileis_inittable;
 
 	if (!is_inittable)
 	{
@@ -24,7 +24,7 @@ static int	ft_convert_and_print(va_list ap, const char fmt)
 		print_table['p'] = ft_putptr;
 		print_table['d'] = ft_putnbr;
 		print_table['i'] = ft_putnbr;
-		print_table['u'] = ft_putchar_unsigned;
+		print_table['u'] = ft_putnbr_unsigned;
 		print_table['x'] = ft_puthex_low;
 		print_table['X'] = ft_puthex_up;
 		print_table['%'] = ft_printf_percent;
