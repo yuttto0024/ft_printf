@@ -6,9 +6,11 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:55:18 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 19:17:11 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:22:42 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putchar(va_list ap)
 {

@@ -2,8 +2,8 @@
 
 int	main(void)
 {
-	char	*p;
+	void	*p;
 
 	p = NULL;
-	printf("%s\n", p);
+	printf("%p\n", p);
 }

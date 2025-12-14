@@ -6,13 +6,13 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:48:21 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 19:04:42 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:22:03 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "FT_PRINTF_H"
+#include "ft_printf.h"
 
-int	ft_convert_and_print(va_list ap, const char fmt)
+static int	ft_convert_and_print(va_list ap, const char fmt)
 {
 	static t_fmt 	print_table[256];
 	static int		is_inittable;
