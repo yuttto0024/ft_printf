@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 17:48:21 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 20:35:33 by yuonishi         ###   ########.fr       */
+/*   Created: 2025/12/25 15:31:13 by yuonishi          #+#    #+#             */
+/*   Updated: 2025/12/25 22:05:21 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	ft_eval_format(const char *fmt, va_list ap, size_t *i)
 			return (-1);
 		(*i)++;
 	}
-	return (ret);	
+	return (ret);
 }
 
 int	ft_printf(const char *fmt, ...)

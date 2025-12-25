@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_putnum_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 17:33:10 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 12:55:09 by yuonishi         ###   ########.fr       */
+/*   Created: 2025/12/25 20:56:16 by yuonishi          #+#    #+#             */
+/*   Updated: 2025/12/25 22:14:28 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_puthex_recursive(unsigned int n, char *base)
+static int	ft_putnbr_unsigned_recursive(unsigned int n)
 {
-	int	len;
-	int	ret;
+	int		len;
+	int		ret;
+	char	c;
 
 	len = 0;
-	ret = 0;
-	if (n >= 16)
+	if (n >= 10)
 	{
-		len += ft_puthex_recursive(n / 16, base);
+		ret = ft_putnbr_unsigned_recursive(n / 10);
 		if (ret == -1)
 			return (-1);
 		len += ret;
 	}
-	if (write(1, &base[n % 16], 1) == -1)
+	c = (n % 10) + '0';
+	if (write(1, &c, 1) == -1)
 		return (-1);
 	len++;
 	return (len);
 }
 
-int	ft_puthex_low(va_list ap)
+int	ft_putnbr_unsigned(va_list ap)
 {
-	return (ft_puthex_recursive(va_arg(ap, unsigned int), "0123456789abcdef"));
-}
+	unsigned int	n;
 
-int	ft_puthex_up(va_list ap)
-{
-	return (ft_puthex_recursive(va_arg(ap, unsigned int), "0123456789ABCDEF"));
+	n = va_arg(ap, unsigned int);
+	return (ft_putnbr_unsigned_recursive(n));
 }

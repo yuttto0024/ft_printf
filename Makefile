@@ -2,25 +2,36 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = \
+SRCDIR      = srcs
+INCDIR      = includes
+OBJDIR      = objs
+
+SRCS_NAME = \
 	ft_printf.c \
 	ft_print_text.c \
-	ft_print_num.c \
-	ft_print_hex.c \
+	ft_putnbr.c \
+	ft_putnbr_unsigned.c \
+	ft_puthex.c \
 	ft_putptr.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS_NAME   = $(SRCS_NAME:.c=.o)
+
+SRCS        = $(addprefix $(SRCDIR)/, $(SRCS_NAME))
+OBJS        = $(addprefix $(OBJDIR)/, $(OBJS_NAME))
+
+IFLAGS      = -I $(INCDIR)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)

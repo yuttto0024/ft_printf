@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 19:53:31 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 13:31:18 by yuonishi         ###   ########.fr       */
+/*   Created: 2025/12/25 21:09:30 by yuonishi          #+#    #+#             */
+/*   Updated: 2025/12/25 22:11:09 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putptr_recursive(unsigned long long n, char *base)
+static int	ft_putptr_recursive(unsigned long n, char *base)
 {
 	int	len;
 	int	ret;
@@ -34,11 +34,11 @@ static int	ft_putptr_recursive(unsigned long long n, char *base)
 
 int	ft_putptr(va_list ap)
 {
-	unsigned long long	ptr;
-	int					len;
-	int					ret;
+	unsigned long	ptr;
+	int				len;
+	int				ret;
 
-	ptr = (unsigned long long)va_arg(ap, void *);
+	ptr = (unsigned long)va_arg(ap, void *);
 	len = 0;
 	if (ptr == 0)
 	{

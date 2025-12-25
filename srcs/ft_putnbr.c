@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_num.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 17:33:16 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 12:30:05 by yuonishi         ###   ########.fr       */
+/*   Created: 2025/12/25 18:39:11 by yuonishi          #+#    #+#             */
+/*   Updated: 2025/12/25 22:10:57 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,33 +46,4 @@ int	ft_putnbr(va_list ap)
 
 	n = va_arg(ap, int);
 	return (ft_putnbr_recursive((long)n));
-}
-
-static int	ft_putnbr_unsigned_recursive(unsigned int n)
-{
-	int		len;
-	int		ret;
-	char	c;
-
-	len = 0;
-	if (n >= 10)
-	{
-		ret = ft_putnbr_unsigned_recursive(n / 10);
-		if (ret == -1)
-			return (-1);
-		len += ret;
-	}
-	c = (n % 10) + '0';
-	if (write(1, &c, 1) == -1)
-		return (-1);
-	len++;
-	return (len);
-}
-
-int	ft_putnbr_unsigned(va_list ap)
-{
-	unsigned int	n;
-
-	n = va_arg(ap, unsigned int);
-	return (ft_putnbr_unsigned_recursive(n));
 }
