@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:33:10 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 20:20:38 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/25 10:28:37 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_puthex_recursive(unsigned int n, char *base)
 
 int	ft_puthex_low(va_list ap)
 {
-	return (ft_puthex_recursive(va_arg(ap, unsigned int), "0123456789abcdef"))
+	return (ft_puthex_recursive(va_arg(ap, unsigned int), "0123456789abcdef"));
 }
 
 int	ft_puthex_up(va_list ap)

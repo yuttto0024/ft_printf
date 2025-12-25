@@ -6,19 +6,18 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 11:41:26 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/14 20:33:31 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/25 10:25:46 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#typedef (* t_convert_formatter)(va_list);
-
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+typedef int	(* t_convert_formatter)(va_list);
 int	ft_printf(const char *, ...);
 int	ft_putchar(va_list ap);
 int	ft_putstr(va_list ap);
