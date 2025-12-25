@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:48:21 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 10:18:04 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/25 10:54:43 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_convert_and_print(va_list ap, const char fmt)
 {
-	static t_convert_formatter 	print_table[256];
+	static t_convert_formatter	print_table[256];
 	static int					is_inittable;
 
 	if (!is_inittable)
@@ -35,7 +35,7 @@ static int	ft_convert_and_print(va_list ap, const char fmt)
 	return (0);
 }
 
-int ft_printf(const char *fmt, ...)
+int	ft_printf(const char *fmt, ...)
 {
 	va_list	ap;
 	int		total_len;

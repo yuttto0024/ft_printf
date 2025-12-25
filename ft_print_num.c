@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:33:16 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 10:27:51 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/25 10:57:17 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_putnbr_recursive(long n)
 {
 	int		len;
 	char	c;
-	
+
 	len = 0;
 	if (n < 0)
 	{
