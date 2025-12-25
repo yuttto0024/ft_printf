@@ -6,7 +6,7 @@
 /*   By: yuonishi <yuonishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:33:16 by yuonishi          #+#    #+#             */
-/*   Updated: 2025/12/25 10:57:17 by yuonishi         ###   ########.fr       */
+/*   Updated: 2025/12/25 12:30:05 by yuonishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,28 @@
 static int	ft_putnbr_recursive(long n)
 {
 	int		len;
+	int		ret;
 	char	c;
 
 	len = 0;
 	if (n < 0)
 	{
-		len += write(1, "-", 1);
+		if (write(1, "-", 1) == -1)
+			return (-1);
+		len++;
 		n = -n;
 	}
 	if (n >= 10)
-		len += ft_putnbr_recursive(n / 10);
+	{
+		ret = ft_putnbr_recursive(n / 10);
+		if (ret == -1)
+			return (-1);
+		len += ret;
+	}
 	c = (n % 10) + '0';
-	len += write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	len++;
 	return (len);
 }
 
@@ -41,13 +51,21 @@ int	ft_putnbr(va_list ap)
 static int	ft_putnbr_unsigned_recursive(unsigned int n)
 {
 	int		len;
+	int		ret;
 	char	c;
 
 	len = 0;
 	if (n >= 10)
-		len += ft_putnbr_unsigned_recursive(n / 10);
+	{
+		ret = ft_putnbr_unsigned_recursive(n / 10);
+		if (ret == -1)
+			return (-1);
+		len += ret;
+	}
 	c = (n % 10) + '0';
-	len += write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	len++;
 	return (len);
 }
 
